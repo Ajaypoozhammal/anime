@@ -28,14 +28,25 @@ class _Screen2State extends State<Screen2> {
           child: Column(
             children: [
 
-              Container(
-                width: double.infinity,
-                height: 200.h,
-                color: Colors.yellow,
-                child: Image.network(
-                  widget.img,
-                  fit: BoxFit.cover,
-                ),
+              Stack(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    height: 200.h,
+                    color: Colors.yellow,
+                    child: Image.network(
+                      widget.img,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  TextButton(onPressed: () { Navigator.of(context).pop(); },
+                  child: Row(
+                    children: [
+                      Icon(Icons.arrow_back,size: 30,color: Colors.white,),SizedBox(width: 250.w,),
+                      Icon(Icons.more_horiz,size: 30,color: Colors.white,)
+                    ],
+                  ),)
+                ],
               ),
               Row(
                 children: [
@@ -195,87 +206,90 @@ class _Screen2State extends State<Screen2> {
                         ],
                                                 ),
                                               ),
-                                              Row(
-                                                children: [
-                        Column(
-                                  children: [
-                                    Text(
-                                      'Length',
-                                      style: GoogleFonts.mulish(
-                                        textStyle: TextStyle(
-                                          color: Color(0xFF9B9B9B),
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      '2h 28min',
-                                      style: GoogleFonts.mulish(
-                                        textStyle: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                        ),
-                        SizedBox(
-                                  width: 60.w,
-                        ),
-                        Column(
-                                  children: [
-                                    Text(
-                                      'Language',
-                                      style: GoogleFonts.mulish(
-                                        textStyle: TextStyle(
-                                          color: Color(0xFF9B9B9B),
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      'English',
-                                      style: GoogleFonts.mulish(
-                                        textStyle: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                        ),
-                        SizedBox(
-                                  width: 60.w,
-                        ),
-                        Column(
-                                  children: [
-                                    Text(
-                                      'Rating',
-                                      style: GoogleFonts.mulish(
-                                        textStyle: TextStyle(
-                                          color: Color(0xFF9B9B9B),
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w400,
-                                        ),
-                                      ),
-                                    ),
-                                    Text(
-                                      'PG-13',
-                                      style: GoogleFonts.mulish(
-                                        textStyle: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 12.sp,
-                                          fontWeight: FontWeight.w600,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                        ),
-                                                ],
+                                              Padding(
+                                                padding: const EdgeInsets.only(left: 20,top: 5),
+                                                child: Row(
+                                                  children: [
+                                                                        Column(
+                                                                                  children: [
+                                                                                    Text(
+                                                                                      'Length',
+                                                                                      style: GoogleFonts.mulish(
+                                                                                        textStyle: TextStyle(
+                                                                                          color: Color(0xFF9B9B9B),
+                                                                                          fontSize: 12.sp,
+                                                                                          fontWeight: FontWeight.w400,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    Text(
+                                                                                      '2h 28min',
+                                                                                      style: GoogleFonts.mulish(
+                                                                                        textStyle: TextStyle(
+                                                                                          color: Colors.black,
+                                                                                          fontSize: 12.sp,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ],
+                                                                        ),
+                                                                        SizedBox(
+                                                                                  width: 60.w,
+                                                                        ),
+                                                                        Column(
+                                                                                  children: [
+                                                                                    Text(
+                                                                                      'Language',
+                                                                                      style: GoogleFonts.mulish(
+                                                                                        textStyle: TextStyle(
+                                                                                          color: Color(0xFF9B9B9B),
+                                                                                          fontSize: 12.sp,
+                                                                                          fontWeight: FontWeight.w400,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    Text(
+                                                                                      'English',
+                                                                                      style: GoogleFonts.mulish(
+                                                                                        textStyle: TextStyle(
+                                                                                          color: Colors.black,
+                                                                                          fontSize: 12.sp,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ],
+                                                                        ),
+                                                                        SizedBox(
+                                                                                  width: 60.w,
+                                                                        ),
+                                                                        Column(
+                                                                                  children: [
+                                                                                    Text(
+                                                                                      'Rating',
+                                                                                      style: GoogleFonts.mulish(
+                                                                                        textStyle: TextStyle(
+                                                                                          color: Color(0xFF9B9B9B),
+                                                                                          fontSize: 12.sp,
+                                                                                          fontWeight: FontWeight.w400,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    Text(
+                                                                                      'PG-13',
+                                                                                      style: GoogleFonts.mulish(
+                                                                                        textStyle: TextStyle(
+                                                                                          color: Colors.black,
+                                                                                          fontSize: 12.sp,
+                                                                                          fontWeight: FontWeight.w600,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ],
+                                                                        ),
+                                                  ],
+                                                ),
                                               ),
                                               Padding(
                                                 padding: const EdgeInsets.only(top: 10,right: 230),
@@ -300,7 +314,7 @@ class _Screen2State extends State<Screen2> {
                         ),
                                                 ),
                                                 Padding(
-                        padding: const EdgeInsets.only(left: 20),
+                        padding: const EdgeInsets.only(left: 20,top: 5),
                         child: Row(
                                   children: [
                                     Text(
@@ -343,119 +357,116 @@ class _Screen2State extends State<Screen2> {
                         ),
                                                 ),
                                               Padding(
-                        padding: const EdgeInsets.only(top: 774, left: 10),
-                        child: Row(
-                                  children: [
-                                    Container(
-                                      height: 100.h,
-                                      width: 80.w,
-                                      decoration: ShapeDecoration(
-                                        color: Colors.white,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(5.r)),
-                                      ),
-                                      child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(10),
-                                          child: Image.asset("assets/b.png")),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Container(
-                                      height: 100.h,
-                                      width: 80.w,
-                                      decoration: ShapeDecoration(
-                                        color: Colors.white,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(5.r)),
-                                      ),
-                                      child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(10),
-                                          child: Image.asset("assets/c.png")),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Container(
-                                      height: 100.h,
-                                      width: 80.w,
-                                      decoration: ShapeDecoration(
-                                        color: Colors.white,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(5.r)),
-                                      ),
-                                      child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(10),
-                                          child: Image.asset("assets/d.png")),
-                                    ),
-                                    SizedBox(
-                                      width: 5,
-                                    ),
-                                    Container(
-                                      height: 100.h,
-                                      width: 80.w,
-                                      decoration: ShapeDecoration(
-                                        color: Colors.white,
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.circular(5.r)),
-                                      ),
-                                      child: ClipRRect(
-                                          borderRadius: BorderRadius.circular(10),
-                                          child: Image.asset("assets/e.png")),
-                                    ),
-                                  ],
-                        ),
+                                                padding: const EdgeInsets.only(top: 5),
+                                                child: Row(
+                                                          children: [
+                                                            Container(
+                                                              height: 100.h,
+                                                              width: 80.w,
+                                                              decoration: ShapeDecoration(
+                                                                color: Colors.white,
+                                                                shape: RoundedRectangleBorder(
+                                                                    borderRadius: BorderRadius.circular(5.r)),
+                                                              ),
+                                                              child: ClipRRect(
+                                                                  borderRadius: BorderRadius.circular(10),
+                                                                  child: Image.asset("assets/b.png")),
+                                                            ),
+                                                            SizedBox(
+                                                              width: 5,
+                                                            ),
+                                                            Container(
+                                                              height: 100.h,
+                                                              width: 80.w,
+                                                              decoration: ShapeDecoration(
+                                                                color: Colors.white,
+                                                                shape: RoundedRectangleBorder(
+                                                                    borderRadius: BorderRadius.circular(5.r)),
+                                                              ),
+                                                              child: ClipRRect(
+                                                                  borderRadius: BorderRadius.circular(10),
+                                                                  child: Image.asset("assets/c.png")),
+                                                            ),
+                                                            SizedBox(
+                                                              width: 5,
+                                                            ),
+                                                            Container(
+                                                              height: 100.h,
+                                                              width: 80.w,
+                                                              decoration: ShapeDecoration(
+                                                                color: Colors.white,
+                                                                shape: RoundedRectangleBorder(
+                                                                    borderRadius: BorderRadius.circular(5.r)),
+                                                              ),
+                                                              child: ClipRRect(
+                                                                  borderRadius: BorderRadius.circular(10),
+                                                                  child: Image.asset("assets/d.png")),
+                                                            ),
+                                                            SizedBox(
+                                                              width: 5,
+                                                            ),
+                                                            Container(
+                                                              height: 100.h,
+                                                              width: 80.w,
+                                                              decoration: ShapeDecoration(
+                                                                color: Colors.white,
+                                                                shape: RoundedRectangleBorder(
+                                                                    borderRadius: BorderRadius.circular(5.r)),
+                                                              ),
+                                                              child: ClipRRect(
+                                                                  borderRadius: BorderRadius.circular(10),
+                                                                  child: Image.asset("assets/e.png")),
+                                                            ),
+                                                          ],
                                                 ),
-                                                Padding(
-                        padding: const EdgeInsets.only(top: 880,left:10),
-                        child: Row(
-                                  children: [
-                                    Text(
-                                      'Tom Holland',
-                                      style: GoogleFonts.mulish(
-                                        textStyle: TextStyle(
-                                        color: Color(0xFF110E47),
-                                        fontSize: 12.sp,
-                                        fontWeight: FontWeight.w400,
-                                        )
-                                      ),
-                                    ),
-                                    SizedBox(width: 25.w,)
-                                                ,                      Text(
-                                      'Zenadaya',
-                                      style: GoogleFonts.mulish(
-                                          textStyle: TextStyle(
-                                            color: Color(0xFF110E47),
-                                            fontSize: 12.sp,
-                                            fontWeight: FontWeight.w400,
-                                          )
-                                      ),
-                                    ),
-                                                SizedBox(width: 20.w,),
-                                    Text(
-                                      ' Benedict\nCumberbatch',
-                                      style: GoogleFonts.mulish(
-                                          textStyle: TextStyle(
-                                            color: Color(0xFF110E47),
-                                            fontSize: 12.sp,
-                                            fontWeight: FontWeight.w400,
-                                          )
-                                      ),
-                                    ),
-                                    SizedBox(width: 25.w,),
+                                              ),
+                                                Row(
+                                                          children: [
+                                                            Text(
+                                                              'Tom Holland',
+                                                              style: GoogleFonts.mulish(
+                                                                textStyle: TextStyle(
+                                                                color: Color(0xFF110E47),
+                                                                fontSize: 12.sp,
+                                                                fontWeight: FontWeight.w400,
+                                                                )
+                                                              ),
+                                                            ),
+                                                            SizedBox(width: 25.w,)
+                                                                        ,                      Text(
+                                                              'Zenadaya',
+                                                              style: GoogleFonts.mulish(
+                                                                  textStyle: TextStyle(
+                                                                    color: Color(0xFF110E47),
+                                                                    fontSize: 12.sp,
+                                                                    fontWeight: FontWeight.w400,
+                                                                  )
+                                                              ),
+                                                            ),
+                                                                        SizedBox(width: 20.w,),
+                                                            Text(
+                                                              ' Benedict\nCumberbatch',
+                                                              style: GoogleFonts.mulish(
+                                                                  textStyle: TextStyle(
+                                                                    color: Color(0xFF110E47),
+                                                                    fontSize: 12.sp,
+                                                                    fontWeight: FontWeight.w400,
+                                                                  )
+                                                              ),
+                                                            ),
+                                                            SizedBox(width: 25.w,),
 
-                                    Text(
-                                      ' Jacon\nBatalon',
-                                      style: GoogleFonts.mulish(
-                                          textStyle: TextStyle(
-                                            color: Color(0xFF110E47),
-                                            fontSize: 12.sp,
-                                            fontWeight: FontWeight.w400,
-                                          )
-                                      ),
-                                    ),
-                                  ],
-                        ),
+                                                            Text(
+                                                              ' Jacon\nBatalon',
+                                                              style: GoogleFonts.mulish(
+                                                                  textStyle: TextStyle(
+                                                                    color: Color(0xFF110E47),
+                                                                    fontSize: 12.sp,
+                                                                    fontWeight: FontWeight.w400,
+                                                                  )
+                                                              ),
+                                                            ),
+                                                          ],
                                                 ),
 
             ],
